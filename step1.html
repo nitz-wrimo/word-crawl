@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="SchoolMaster">
+
+	<title>Harry Potter Word Crawl</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="static/coreresources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="static/coreresources/jquery/jquery-3.4.1.min.js"></script>
+	<script src="static/coreresources/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Custom fonts for this template -->
+	<link href="static/coreresources/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700|Ropa+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Italianno&display=swap" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="static/css/crawl_styles.css" rel="stylesheet">
+</head>
+
+<body class="step1">
+	<div class="row">
+		<div class="col-sm-4 mt-5 pt-3 pl-5">
+			<img src="static/css/img/letter.png" style="max-height: 55vh;"></img>
+		</div>
+		<div class="col-sm-8">
+			<p class="mt-5 mb-0 mx-5 pt-5">It is a hot July morning when you get your Hogwarts letter.</p>
+			<p class="mx-5">Do a <u>5 minute sprint</u> as you show it to your parents.</p>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4 ml-5 pl-5">
+			<button type="button" id="startTimer" class="btn-trans-light px-5 py-0 ml-5" style="font-size: 6vh;" onclick="showTimer();">Start Timer</button>
+			<div id="time" class="text-center"></div>
+		</div>
+	</div>
+	<div class="row mt-5">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-6">
+			<form >
+				<input class="input-light pl-3" type="number" id="wordCount1" placeholder="Enter Word Count"style="font-size: 7vh;">
+				<button type="button" class="btn-trans-light px-5 py-0" style="font-size: 7vh;" onclick="enterWords();">Done</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+<script type="application/javascript">
+	function startTimer(duration, display) {
+	    var start = Date.now(),
+	        diff,
+	        minutes,
+	        seconds;
+	    function timer() {
+	        // get the number of seconds that have elapsed since 
+	        // startTimer() was called
+	        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+	        // does the same job as parseInt truncates the float
+	        minutes = (diff / 60) | 0;
+	        seconds = (diff % 60) | 0;
+
+	        minutes = minutes < 10 ? "0" + minutes : minutes;
+	        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+	        display.textContent = minutes + ":" + seconds; 
+
+	        if (diff <= 0) {
+	            // add one second so that the count down starts at the full duration
+	            // example 05:00 not 04:59
+	            display.textContent = "Time Over"; 
+	        }
+	    };
+	    // we don't want to wait a full second before the timer starts
+	    //timer();
+	    setInterval(timer, 500);
+	};
+
+	function showTimer () {
+		$('#startTimer').hide();
+	    var duration = 60 * 5,
+	        display = document.querySelector('#time');
+	    startTimer(duration, display);
+	};
+
+	function enterWords () {
+		words = document.getElementById('wordCount1').value;
+		sessionStorage.setItem("wordCount1", words);
+		window.location = "./step2.html";
+	}
+</script>

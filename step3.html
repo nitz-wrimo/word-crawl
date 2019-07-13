@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="SchoolMaster">
+
+	<title>Harry Potter Word Crawl</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="static/coreresources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="static/coreresources/jquery/jquery-3.4.1.min.js"></script>
+	<script src="static/coreresources/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Custom fonts for this template -->
+	<link href="static/coreresources/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700|Ropa+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Italianno&display=swap" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="static/css/crawl_styles.css" rel="stylesheet">
+</head>
+
+<body class="step3">
+	<div class="row pt-5">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 mt-3"style="color: #ffffff;">The first place you go to in the Diagon Alley is Gringotts. The goblins take you to your vault but it is a long ride. Pass the time by <u>writing 300 words</u></div>
+	</div>
+	<div class="row mt-5">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-6">
+			<form >
+				<input class="input-dark pl-3" type="number" id="wordCount3" placeholder="Enter Word Count"style="font-size: 7vh;">
+				<button type="button" class="btn-trans-dark px-5 py-0" style="font-size: 7vh;" onclick="enterWords();">Done</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+<script type="application/javascript">
+
+	function enterWords() {
+		words = document.getElementById('wordCount3').value;
+		sessionStorage.setItem("wordCount3", words);
+		alert('You received a galleon! You can now skip any one challenge by trading it in.');
+		sessionStorage.setItem("galleon", 1);
+		console.log(sessionStorage.getItem("galleon"));
+		window.location = "./step4.html";
+	}
+</script>

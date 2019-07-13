@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="SchoolMaster">
+
+	<title>Harry Potter Word Crawl</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="static/coreresources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="static/coreresources/jquery/jquery-3.4.1.min.js"></script>
+	<script src="static/coreresources/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Custom fonts for this template -->
+	<link href="static/coreresources/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700|Ropa+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Italianno&display=swap" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="static/css/crawl_styles.css" rel="stylesheet">
+</head>
+
+<body class="step2">
+	<div class="row pt-5">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 mt-3" id="bloodStatus" style="color: #ffffff;"></div>
+	</div>
+	<div class="row mt-5">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-6">
+			<form >
+				<input class="input-dark pl-3" type="number" id="wordCount2" placeholder="Enter Word Count" style="font-size: 7vh;">
+				<button type="button" class="btn-trans-dark px-5 py-0" style="font-size: 7vh;" onclick="enterWords();">Done</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+<script type="application/javascript">
+	wordCount1 = sessionStorage.getItem("wordCount1");
+	textContainer = document.getElementById('bloodStatus');
+	var playerBloodStatus = "";
+	if (wordCount1 <= 100) {
+		textContainer.innerHTML = "<p>As a muggle born, you need some extra time to understand the wizarding customs. <u>Write another 250 words</u> as you try to take notes on the wizarding customs new friends tell you about.</p>"
+		playerBloodStatus = "muggleborn";
+	}
+	else if (wordCount1 <=250) {
+		textContainer.innerHTML = "<p>You are a half blood. So naturally, all the muggle borns flock to you for assistance on the wizarding world and the pure bloods want you to tell them all about ‘elekcitrity’. <u>Write another 150 words</u> while you bask in the popularity.</p>"
+		playerBloodStatus = "halfblood";
+	}
+	else {
+		textContainer.innerHTML = "<p>I can see you are a pureblood. You have been practicing magic since you were 5. Flex your fingers and <u>write another 100 words</u> while you watch all these bright eyes wizards and witches walk around in Diagon Alley.</p>"
+		playerBloodStatus = "pureblood";
+	}
+	sessionStorage.setItem("bloodStatus", playerBloodStatus);
+
+	function enterWords() {
+		words = document.getElementById('wordCount2').value;
+		sessionStorage.setItem("wordCount2", words);
+		window.location = "./step3.html";
+	}
+</script>

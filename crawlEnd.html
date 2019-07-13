@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="SchoolMaster">
+
+	<title>Harry Potter Word Crawl</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="static/coreresources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="static/coreresources/jquery/jquery-3.4.1.min.js"></script>
+	<script src="static/coreresources/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Custom fonts for this template -->
+	<link href="static/coreresources/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700|Ropa+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Italianno&display=swap" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="static/css/crawl_styles.css" rel="stylesheet">
+</head>
+
+<body class="crawlend" style="height: 100vh;">
+	<div class="row pt-5 mt-5">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 mt-3 text-center" style="color: #000000;" id="congrats"></div>
+	</div>
+
+
+</body>
+
+<script type="application/javascript">
+	total_words = parseInt(sessionStorage.getItem("wordCount1")) + parseInt(sessionStorage.getItem("wordCount2")) + parseInt(sessionStorage.getItem("wordCount3")) + parseInt(sessionStorage.getItem("wordCount4")) + parseInt(sessionStorage.getItem("wordCount5")) + parseInt(sessionStorage.getItem("wordCount6")) + parseInt(sessionStorage.getItem("wordCount7")) + parseInt(sessionStorage.getItem("wordCount8"));
+	speed_1 = parseInt(sessionStorage.getItem("wordCount1"))/5;
+	speed_6 = parseInt(sessionStorage.getItem("wordCount6"))/15;
+	timer_8 = sessionStorage.getItem("timer_8");
+	if (timer_8 > 0) {
+		speed_8 = parseInt(sessionStorage.getItem("wordCount8"))/timer_8;
+		avg_speed = Math.floor((speed_1+speed_6+speed_8)/3);
+		max_speed = Math.floor(Math.max(speed_1,speed_6, speed_8));
+	}
+	else {
+		speed_8 = 0;
+		avg_speed = Math.floor((speed_1+speed_6)/2);
+		max_speed = Math.floor(Math.max(speed_1,speed_6));
+	}
+	document.getElementById('congrats').innerHTML = "<p>Congratulations! You managed to finish all your shopping in time and wrote " + total_words + " words in the process</p><p>Your average speed was <u>" + avg_speed + " wpm </u></p><p>Your maximum speed was <u>" + max_speed + " wpm </u></p>";
+
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="SchoolMaster">
+
+	<title>Harry Potter Word Crawl</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="static/coreresources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="static/coreresources/jquery/jquery-3.4.1.min.js"></script>
+	<script src="static/coreresources/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Custom fonts for this template -->
+	<link href="static/coreresources/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700|Ropa+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Italianno&display=swap" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="static/css/crawl_styles.css" rel="stylesheet">
+</head>
+
+<body class="step8" style="height: 100vh;">
+	<div class="row pt-5">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 mt-3 text-center" style="color: #000000;">While your parents finish up the rest of the shopping and you meet with new friends. One of your friends offers you some sweets. Which one do you pick?</div>
+	</div>
+	<div class="row mt-5">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 text-center" style="color: #000000;">
+			<div class="btn-group" role="group" aria-label="Basic example">
+			  <button type="button" class="btn btn-dark" style="font-size: 5vh;" onclick="selectSweet('Chocolate Frogs');">Chocolate Frogs</button>
+			  <button type="button" class="btn btn-warning" style="font-size: 5vh;" onclick="selectSweet('Bertie Botts');">Bertie Botts Every Flavoured Beans</button>
+			  <button type="button" class="btn btn-danger" style="font-size: 5vh;" onclick="selectSweet('Blood Lollipops');">Blood Flavoured Lollipops</button>
+			  <button type="button" class="btn btn-light" style="font-size: 5vh;" onclick="selectSweet('Muggle Sweet');">Hershey's Kisses</button>
+			  <button type="button" class="btn btn-info" style="font-size: 5vh;" onclick="selectSweet('surprise');">Let my friends surprise me</button>
+			</div>
+		</div>
+		
+	</div>	
+	<div class="row pt-3">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 mt-3 text-center" style="color: #000000; font-size: 4.5vh;">Based on your choice, you will receive a word count or timed challenge along with a writing dare (and a bonus dare!)</div>
+	</div>
+
+</body>
+
+<script type="application/javascript">
+	function selectSweet(sweetChoice) {
+		sweet = sweetChoice;
+		sessionStorage.setItem("sweet", sweet);
+		window.location = "./step8choice.html";
+	}
+
+</script>

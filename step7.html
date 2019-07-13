@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="SchoolMaster">
+
+	<title>Harry Potter Word Crawl</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="static/coreresources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="static/coreresources/jquery/jquery-3.4.1.min.js"></script>
+	<script src="static/coreresources/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Custom fonts for this template -->
+	<link href="static/coreresources/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700|Ropa+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Italianno&display=swap" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="static/css/crawl_styles.css" rel="stylesheet">
+</head>
+
+<body class="step7">
+	<div class="row pt-5">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 mt-3 text-center" style="color: #ffffff;">Next you go to Flourish and Blotts to buy your school books. Sprint to the next 1000 on your total wordcount while the shop assistant gets the books for you.</div>
+	</div>
+	<div class="row mt-5">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-6">
+			<form >
+				<input class="input-dark pl-3" type="number" id="wordCount7" placeholder="Enter Word Count"style="font-size: 7vh;">
+				<button type="button" class="btn-trans-dark px-5 py-0" style="font-size: 7vh;" onclick="enterWords();">Done</button>
+			</form>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-5 ml-5 mt-2" id="tradeG">
+		</div>
+	</div>	
+</body>
+
+<script type="application/javascript">
+	if(sessionStorage.getItem("galleon")>0){
+		document.getElementById('tradeG').innerHTML = "<button type='button' class='btn-trans-light px-5 py-0 ml-5' style='font-size: 6vh;' onclick='tradeGalleon();'>Trade in Galleon to skip</button>";
+	}
+
+	function enterWords() {
+		words = document.getElementById('wordCount7').value;
+		sessionStorage.setItem("wordCount7", words);
+		window.location = "./step8.html";
+	}
+
+	function tradeGalleon() {
+		sessionStorage.setItem("wordCount7", 0);
+		galleonNow = sessionStorage.getItem("galleon")-1
+		sessionStorage.setItem("galleon", galleonNow);
+		window.location = "./step8.html";
+
+	}
+
+</script>

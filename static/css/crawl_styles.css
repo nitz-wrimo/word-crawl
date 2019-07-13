@@ -1,0 +1,106 @@
+a {
+	text-decoration: none;
+}
+
+/* Backgrounds */
+.intro{
+	background-image: url('./intro.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Italianno', cursive;
+	font-size: 8vh;
+}
+.step1 {
+	background-image: linear-gradient(to right, #F7B948, #DE5C36);
+	font-family: 'Italianno', cursive;
+	font-size: 8vh;
+}
+
+.step2 {
+	background-image: url('./step2.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Italianno', cursive;
+	font-size: 8vh;
+}
+
+.step3 {
+	background-image: url('./step3.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Italianno', cursive;
+	font-size: 8vh;
+}
+
+.step4 {
+	background-image: url('./step4.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Italianno', cursive;
+	font-size: 8vh;
+}
+
+.step7 {
+	background-image: url('./step7.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Italianno', cursive;
+	font-size: 8vh;
+}
+
+.step8 {
+	background-image: linear-gradient(to right, #8AB9BA, #2FCCFF);
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Italianno', cursive;
+	font-size: 8vh;
+}
+
+.crawlend {
+	background-image: url('./crawlend.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Italianno', cursive;
+	font-size: 8vh;
+
+}
+
+/* Buttons */
+.btn-trans-light {
+	background: transparent !important;
+	border: solid 3px !important;
+	border-color: #000000 !important;
+	color: #000000 !important;
+	border-radius: 5px !important;
+}
+
+.btn-trans-dark {
+	background: transparent !important;
+	border: solid 3px !important;
+	border-color: #ffffff !important;
+	color: #ffffff !important;
+	border-radius: 5px !important;
+}
+
+/* Input */
+.input-light {
+	border: none !important;
+	border-radius: 0px !important;
+	border-bottom: solid 1.5px #000000 !important;
+	background: transparent !important;
+	padding-bottom: 0px;
+}
+
+.input-dark {
+	border: none !important;
+	border-radius: 0px !important;
+	border-bottom: solid 1.5px #ffffff !important;
+	background: transparent !important;
+	padding-bottom: 0px;
+	color: #ffffff;
+}
+
+
+::placeholder { 
+	color: #5E5E5E !important;
+}
